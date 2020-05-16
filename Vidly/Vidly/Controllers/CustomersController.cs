@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web.Mvc;
 using Vidly.Models;
@@ -27,8 +28,10 @@ namespace Vidly.Controllers
             /*
              * initiate customers from context db.
              * with .ToList() the query will be executed immediately
+             *
+             * eager loading
              */
-            var customers = _context.Customers.ToList();
+            var customers = _context.Customers.Include(c => c.MembershipType).ToList();
 
             return View(customers);
         }
