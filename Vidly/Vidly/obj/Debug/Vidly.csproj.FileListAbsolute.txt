@@ -112,3 +112,5 @@ C:\Users\Pasoy\Desktop\git stuff\asp-projects\Vidly\Vidly\obj\Debug\Vidly.Migrat
 C:\Users\Pasoy\Desktop\git stuff\asp-projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMembershipType.resources
 C:\Users\Pasoy\Desktop\git stuff\asp-projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateMembershipTypes.resources
 C:\Users\Pasoy\Desktop\git stuff\asp-projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.ApplyAnnotationsToCustomerName.resources
+C:\Users\Pasoy\Desktop\git stuff\asp-projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMembershipName.resources
+C:\Users\Pasoy\Desktop\git stuff\asp-projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateMigrationNames.resources
