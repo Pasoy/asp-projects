@@ -115,3 +115,5 @@ C:\Users\Pasoy\Desktop\git stuff\asp-projects\Vidly\Vidly\obj\Debug\Vidly.Migrat
 C:\Users\Pasoy\Desktop\git stuff\asp-projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMembershipName.resources
 C:\Users\Pasoy\Desktop\git stuff\asp-projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateMigrationNames.resources
 C:\Users\Pasoy\Desktop\git stuff\asp-projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddCustomerBirthdate.resources
+C:\Users\Pasoy\Desktop\git stuff\asp-projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddMoviesAndGenre.resources
+C:\Users\Pasoy\Desktop\git stuff\asp-projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateGenres.resources
