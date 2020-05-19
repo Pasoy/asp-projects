@@ -24,7 +24,6 @@ namespace Vidly.Controllers
          * HttpNotFoundResult = HttpNotFound()
          * EmptyResult
          */
-
         /**
          * Parameter Sources:
          *
@@ -32,7 +31,6 @@ namespace Vidly.Controllers
          * In the query string: /movies/edit?id=1
          * In the form data: id=1
          */
-
         private ApplicationDbContext _context;
 
         public MoviesController()
@@ -44,14 +42,42 @@ namespace Vidly.Controllers
         {
             _context.Dispose();
         }
-        
+
         public ViewResult Index()
         {
             var movies = _context.Movies.Include(m => m.Genre).ToList();
 
             return View(movies);
         }
-        
+
+        public ViewResult New()
+        {
+            var genres = _context.Genres.ToList();
+
+            var viewModel = new MovieFormViewModel
+            {
+                Genres = genres
+            };
+
+            return View("MovieForm", viewModel);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var movie = _context.Movies.SingleOrDefault(c => c.Id == id);
+
+            if (movie == null)
+                return HttpNotFound();
+
+            var viewModel = new MovieFormViewModel
+            {
+                Movie = movie,
+                Genres = _context.Genres.ToList()
+            };
+
+            return View("MovieForm", viewModel);
+        }
+
         public ActionResult Details(int id)
         {
             var movie = _context.Movies.Include(m => m.Genre).SingleOrDefault(m => m.Id == id);
@@ -67,11 +93,11 @@ namespace Vidly.Controllers
         // GET: Movies/Random
         public ActionResult Random()
         {
-            var movie = new Movie() { Name = "Shrek!" };
+            var movie = new Movie() {Name = "Shrek!"};
             var customers = new List<Customer>
             {
-                new Customer { Name = "Customer 1" },
-                new Customer { Name = "Customer 2" }
+                new Customer {Name = "Customer 1"},
+                new Customer {Name = "Customer 2"}
             };
 
             var viewModel = new RandomMovieViewModel
@@ -81,6 +107,28 @@ namespace Vidly.Controllers
             };
 
             return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Save(Movie movie)
+        {
+            if (movie.Id == 0)
+            {
+                movie.DateAdded = DateTime.Now;
+                _context.Movies.Add(movie);
+            }
+            else
+            {
+                var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
+                movieInDb.Name = movie.Name;
+                movieInDb.GenreId = movie.GenreId;
+                movieInDb.NumberInStock = movie.NumberInStock;
+                movieInDb.ReleaseDate = movie.ReleaseDate;
+            }
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Movies");
         }
     }
 }

@@ -5,9 +5,13 @@
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-top: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-top: 0.8rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+}
+
+.mb-08 {
+    margin-bottom: 0.8rem;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
