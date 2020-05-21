@@ -22,7 +22,7 @@ namespace Vidly.Models
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Please enter a customer's name!")]
+        [Required(ErrorMessage = "Please enter a customer's name.")]
         [StringLength(255)]
         public string Name { get; set; }
 
