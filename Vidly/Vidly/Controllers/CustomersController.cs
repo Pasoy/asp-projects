@@ -38,6 +38,7 @@ namespace Vidly.Controllers
 
         // that it can only be caused by POST, not GET
         [HttpPost]
+        [ValidateAntiForgeryToken ]
         public ActionResult Save(Customer customer)
         {
             if (!ModelState.IsValid)
