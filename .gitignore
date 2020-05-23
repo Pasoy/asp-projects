@@ -345,3 +345,7 @@ MigrationBackup/
 .ionide/
 
 .vs/
+
+Vidly/Vidly/bin/
+Vidly/Vidly/obj/
+Vidly/packages/
