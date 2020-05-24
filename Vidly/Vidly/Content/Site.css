@@ -35,3 +35,7 @@ textarea {
 .input-validation-error {
     border: 2px solid red;
 }
+
+table.dataTable {
+    border-collapse: collapse !important;
+}
